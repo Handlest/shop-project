@@ -1,8 +1,6 @@
 {% extends 'main/layout.html' %}
 {% load static %}
-
 {% block title %}Главная страница{% endblock %}
-
 {% block content %}
     <body>
     <section class="py-5 text-center container">
@@ -17,16 +15,12 @@
             </div>
         </div>
     </section>
-
     <div class="album py-5 bg-body-tertiary">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for i in "123456" %}
                 {% include 'main/product_card.html' %}
-                {% include 'main/product_card.html' %}
-                {% include 'main/product_card.html' %}
-                {% include 'main/product_card.html' %}
-                {% include 'main/product_card.html' %}
-                {% include 'main/product_card.html' %}
+                {% endfor %}
             </div>
         </div>
     </div>
