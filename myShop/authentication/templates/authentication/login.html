@@ -1,0 +1,27 @@
+{% extends 'authentication/layout.html' %}
+{% load static %}
+{% block title %}Вход{% endblock %}
+{% block content %}
+    <section class="main">
+        <form>
+            <div class="mb-3 ">
+                <label for="exampleInputPhone1" class="form-label">Логин</label>
+                <input type="tel" class="form-control" id="exampleInputPhone1" placeholder="Введите номер телефона"
+                       aria-describedby="emailHelp">
+                <div id="phoneHelp" class="form-text">Номер телефона должен соответствовать формату +79999999999</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Пароль</label>
+                <input type="password" class="form-control" placeholder="Введите пароль" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
+            </div>
+            <div class="col text-end">
+                <a class="btn btn-primary" href="{% url 'main' %}" role="button">Войти</a>
+                <a class="btn btn-outline-primary me-2" href="{% url 'register' %}" role="button">Зарегистрироваться</a>
+            </div>
+        </form>
+    </section>
+{% endblock %}

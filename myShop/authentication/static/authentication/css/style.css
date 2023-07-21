@@ -1,0 +1,7 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15% 35%;
+    /*border: 5px solid darkblue;*/
+}
