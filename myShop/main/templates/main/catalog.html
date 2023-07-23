@@ -1,9 +1,50 @@
 {% extends 'main/layout.html' %}
-
+{% load static %}
 {% block title %}Каталог{% endblock %}
+{% block custom_style %}
+    <link rel="stylesheet" href="{% static 'main/css/catalog.css' %}">
+{% endblock %}
 
 {% block content %}
-<body>
-<h1>Страница с каталогом всех товаров и сортировкой</h1>
-</body>
+    <div class="sidenav">
+        <h3>Фильтры</h3>
+        <label for="inputGroupSelect01"></label><select class="form-select" id="inputGroupSelect01">
+        <option selected>Тип товара...</option>
+        <option value="1">Комнатные растения</option>
+        <option value="2">Уход за растениями</option>
+        <option value="3">Сопутствующие товары</option>
+    </select>
+        <label for="inputGroupSelect02"></label><select class="form-select" id="inputGroupSelect01">
+        <option selected>Категория...</option>
+        <option value="1">Бегонии</option>
+        <option value="2">Ахименесы</option>
+        <option value="3">Тюльпаны</option>
+        <option value="4">Розы</option>
+    </select>
+        <p>Цена, руб</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <p>От</p>
+                    <input type="text" aria-label="From" class="form-control" placeholder="144">
+                </div>
+                <div class="col-sm">
+                    <p>До</p>
+                    <input type="text" aria-label="UpTo" class="form-control" placeholder="2305">
+                </div>
+            </div>
+        </div>
+    <button type="button" class="btn btn-success">Найти</button>
+    </div>
+    <main>
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    {% for i in "123456" %}
+                        {% include 'main/product_card.html' %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
 {% endblock %}

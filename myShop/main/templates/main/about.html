@@ -1,9 +1,49 @@
 {% extends 'main/layout.html' %}
-
+{% load static %}
 {% block title %}О нас{% endblock %}
 
+{% block custom_style %}
+    <link rel="stylesheet" href="{% static 'main/css/about.css' %}">
+{% endblock %}
+
+<style>
+
+</style>
+
 {% block content %}
-<body>
-<h1>Как понятно из названия, эта страница про нас и наш магазин</h1>
-</body>
+    <header class="header">
+        <div class="container">
+            <img src="{% static 'main/img/logo.svg' %}" alt="Logo" width="80" height="80"
+                 class="d-inline-block align-text-center">
+            <h1 class="header__title">Flower<br>Shop</h1>
+        </div>
+    </header>
+    <article class="article article_whitebg article_first">
+        <h2 class="black">Добро<br>Пожаловать!</h2>
+        <div class="text-body">
+            <p class="black">Мы крайне рады видеть вас в нашем интернет магазине. Позвольте рассказать о нас и нашем
+                бизнесе
+                <strong>чуть больше</strong></p>
+            <p>*Тут написана разнообразная информация про нас, когда была создана компания, какие у неё цели, какая она
+                хорошая, добрая и вечная*</p>
+            <p>А ещё возможно тут стоило бы другую картинку на фон подобрать, но дизайнер из меня не очень</p>
+        </div>
+    </article>
+    <article class="article article_bluebg article_second">
+        <h2 class="white">Свяжитесь с нами</h2>
+        <p class="white">Если у вас остались какие-либо вопросы, вы можете заполнить эту форму обратной связи. Мы
+            обязательно ответим на все вопросы</p>
+        <form class="form">
+            <label>
+                <input type="email" class="form_input" placeholder="E-mail">
+            </label>
+            <label>
+                <input type="text" class="form_input" placeholder="Имя">
+            </label>
+            <label>
+                <textarea class="form_textarea" placeholder="Ваше сообщение"></textarea>
+            </label>
+            <button class="form_button" type="button">Отправить</button>
+        </form>
+    </article>
 {% endblock %}

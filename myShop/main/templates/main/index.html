@@ -2,7 +2,6 @@
 {% load static %}
 {% block title %}Главная страница{% endblock %}
 {% block content %}
-    <body>
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
@@ -19,10 +18,9 @@
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 {% for i in "123456" %}
-                {% include 'main/product_card.html' %}
+                    {% include 'main/product_card.html' %}
                 {% endfor %}
             </div>
         </div>
     </div>
-    </body>
 {% endblock %}
