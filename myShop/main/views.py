@@ -23,8 +23,8 @@ def faq(request):
 
 
 def login(request):
-    return render(request, 'main/login.html')
+    return render(request, 'authentication/login.html')
 
 
 def register(request):
-    return render(request, 'main/register.html')
+    return render(request, 'authentication/register.html')

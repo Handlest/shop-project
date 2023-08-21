@@ -5,3 +5,28 @@ form {
     margin: 15% 35%;
     /*border: 5px solid darkblue;*/
 }
+
+.error_span {
+    color: red;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.has_account{
+    text-align: center;
+    margin-top: 18px;
+}

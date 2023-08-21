@@ -40,10 +40,26 @@
                 <a class="nav-link" href="{% url 'about' %}">О нас</a>
             </li>
         </ul>
-        <div class="text-end">
-            <a class="btn btn-outline-primary me-2" href="{% url 'login' %}" role="button">Войти</a>
-            <a class="btn btn-primary" href="{% url 'register' %}" role="button">Зарегистрироваться</a>
-        </div>
+        {% if user.is_authenticated %}
+            <div class="username">{{ user }}</div>
+            <div class="dropdown">
+                <a class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-lg-start text-small">
+                    <li><a class="dropdown-item" href="#">Профиль</a></li>
+                    <li><a class="dropdown-item" href="#">Заказы</a></li>
+                    <li><a class="dropdown-item" href="#">Корзина</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{% url 'logout' %}">Выйти</a></li>
+                </ul>
+            </div>
+        {% else %}
+            <div class="text-end">
+                <a class="btn btn-outline-primary me-2" href="{% url 'login' %}" role="button">Войти</a>
+                <a class="btn btn-primary" href="{% url 'register' %}" role="button">Зарегистрироваться</a>
+            </div>
+        {% endif %}
     </div>
 </nav>
 

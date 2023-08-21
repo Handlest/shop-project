@@ -3,26 +3,32 @@
 {% block title %}Вход{% endblock %}
 {% block content %}
     <section class="main">
-        <form>
+        <form method="post">
+            {% csrf_token %}
             <div class="mb-3">
-                <label for="InputPassword1" class="form-label">ФИО</label>
-                <input type="text" class="form-control" placeholder="Иванов Сергей Иванович" id="InputPassword1">
+                <label for="InputFIO" class="form-label">ФИО</label>
+                {{ form.name }}
             </div>
             <div class="mb-3">
-                <label for="InputPhone1" class="form-label">Номер телефона</label>
-                <input type="tel" class="form-control" id="InputPhone1" placeholder="+79774717727" aria-describedby="emailHelp">
+                <label for="InputPhone" class="form-label">Номер телефона</label>
+                {{ form.phone }}
                 <div id="phoneHelp" class="form-text">Номер телефона должен соответствовать формату +79999999999</div>
             </div>
             <div class="mb-3">
-                <label for="InputPassword1" class="form-label">Пароль</label>
-                <input type="password" class="form-control" placeholder="Введите пароль" id="InputPassword1">
+                <label for="InputPassword" class="form-label">Пароль</label>
+                {{ form.password }}
             </div>
             <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="rememberCheck1">
-                <label class="form-check-label" for="rememberCheck1">Запомнить меня</label>
+                <input type="checkbox" class="form-check-input" id="rememberCheck">
+                <label class="form-check-label" for="rememberCheck">Запомнить меня</label>
             </div>
+            <span class="error_span">{{ error }}</span>
             <div class="col text-end">
-                <a class="btn btn-primary" href="{% url 'main' %}" role="button">Зарегистрироваться</a>
+                <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
+            </div>
+            <div class="mb-3 has_account">
+                Уже есть аккаунт?
+                <a href="{% url 'login' %}">Войти</a>
             </div>
         </form>
     </section>

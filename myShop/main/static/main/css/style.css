@@ -9,3 +9,18 @@ main main{
     background: gainsboro;
     margin-left: 240px;
 }
+
+.d-block{
+    padding-right: 16px;
+}
+
+.dropdown-menu.dropdown-menu-lg-start.text-small.show{
+    right:0;
+    left: auto;
+    width: auto;
+}
+
+.username{
+    color: white;
+    margin-right: 18px;
+}
